@@ -1,0 +1,4 @@
+.venv/
+.env
+Neo4j-*-Created-*.txt
+__pycache__/
