@@ -2,7 +2,7 @@
   {
     "paciente_id": "PAC001",
     "nome": "Helena Duarte Lima",
-    "data_nascimento": "1954-02-18",
+    "data_nascimento": "18/02/1954",
     "telefone": "(83) 90000-0001",
     "endereco": {"logradouro": "Rua dos Ipês de Papel", "numero": 18, "bairro": "Tambaú", "cidade": "João Pessoa", "uf": "PB"},
     "especialidade_escolhida": "Clínico geral"
@@ -10,7 +10,7 @@
   {
     "paciente_id": "PAC002",
     "nome": "Antônio Vieira Ramos",
-    "data_nascimento": "1959-08-24",
+    "data_nascimento": "24/08/1959",
     "telefone": "(83) 90000-0002",
     "endereco": {"logradouro": "Rua das Dunas de Vidro", "numero": 42, "bairro": "Bessa", "cidade": "João Pessoa", "uf": "PB"},
     "especialidade_escolhida": "Endocrinologista"
@@ -18,7 +18,7 @@
   {
     "paciente_id": "PAC003",
     "nome": "Camila Moura Alves",
-    "data_nascimento": "1996-05-12",
+    "data_nascimento": "12/05/1996",
     "telefone": "(83) 90000-0003",
     "endereco": {"logradouro": "Rua das Conchas de Papel", "numero": 73, "bairro": "Manaíra", "cidade": "João Pessoa", "uf": "PB"},
     "especialidade_escolhida": "Ginecologista"
@@ -26,7 +26,7 @@
   {
     "paciente_id": "PAC004",
     "nome": "Rafael Nunes Costa",
-    "data_nascimento": "1988-03-27",
+    "data_nascimento": "27/03/1988",
     "telefone": "(83) 90000-0004",
     "endereco": {"logradouro": "Rua do Farol de Cobre", "numero": 95, "bairro": "Cabo Branco", "cidade": "João Pessoa", "uf": "PB"},
     "especialidade_escolhida": "Clínico geral"
@@ -34,7 +34,7 @@
   {
     "paciente_id": "PAC005",
     "nome": "Beatriz Martins Rocha",
-    "data_nascimento": "2002-09-03",
+    "data_nascimento": "03/09/2002",
     "telefone": "(83) 90000-0005",
     "endereco": {"logradouro": "Rua das Nuvens de Linho", "numero": 27, "bairro": "Bancários", "cidade": "João Pessoa", "uf": "PB"},
     "especialidade_escolhida": "Clínico geral"
@@ -42,7 +42,7 @@
   {
     "paciente_id": "PAC006",
     "nome": "Lucas Barreto Freire",
-    "data_nascimento": "1993-12-15",
+    "data_nascimento": "15/12/1993",
     "telefone": "(83) 90000-0006",
     "endereco": {"logradouro": "Rua do Jardim de Luar", "numero": 61, "bairro": "Mangabeira", "cidade": "João Pessoa", "uf": "PB"},
     "especialidade_escolhida": "Ortopedista"
@@ -50,7 +50,7 @@
   {
     "paciente_id": "PAC007",
     "nome": "Juliana Melo Cardoso",
-    "data_nascimento": "1981-07-21",
+    "data_nascimento": "21/07/1981",
     "telefone": "(83) 90000-0007",
     "endereco": {"logradouro": "Rua das Estrelas de Barro", "numero": 34, "bairro": "Torre", "cidade": "João Pessoa", "uf": "PB"},
     "especialidade_escolhida": "Clínico geral"
@@ -58,7 +58,7 @@
   {
     "paciente_id": "PAC008",
     "nome": "Marcos Pinto Azevedo",
-    "data_nascimento": "1974-04-08",
+    "data_nascimento": "08/04/1974",
     "telefone": "(83) 90000-0008",
     "endereco": {"logradouro": "Rua das Folhas de Prata", "numero": 108, "bairro": "Jaguaribe", "cidade": "João Pessoa", "uf": "PB"},
     "especialidade_escolhida": "Clínico geral"
@@ -66,7 +66,7 @@
   {
     "paciente_id": "PAC009",
     "nome": "Larissa Gomes Brito",
-    "data_nascimento": "1999-01-30",
+    "data_nascimento": "30/01/1999",
     "telefone": "(83) 90000-0009",
     "endereco": {"logradouro": "Rua dos Cataventos de Coral", "numero": 56, "bairro": "Jardim Oceania", "cidade": "João Pessoa", "uf": "PB"},
     "especialidade_escolhida": "Ginecologista"
@@ -74,7 +74,7 @@
   {
     "paciente_id": "PAC010",
     "nome": "Diego Campos Ribeiro",
-    "data_nascimento": "1986-10-19",
+    "data_nascimento": "19/10/1986",
     "telefone": "(83) 90000-0010",
     "endereco": {"logradouro": "Rua das Pontes de Madeira", "numero": 82, "bairro": "Castelo Branco", "cidade": "João Pessoa", "uf": "PB"},
     "especialidade_escolhida": "Clínico geral"
