@@ -7,11 +7,19 @@ from dotenv import load_dotenv
 from pymongo import MongoClient
 from pymongo.errors import PyMongoError
 
+from interface import mostrar_cabecalho
 from recepcao import mostrar_recepcao
 
-st.set_page_config(page_title="Telemedicina")
-st.title("Telemedicina")
+st.set_page_config(page_title="Telemedicina", layout="wide")
+st.sidebar.title("Telemedicina")
 pagina = st.sidebar.radio("Área", ("Prontuário", "Recepção Virtual"))
+
+
+descricoes = {
+    "Prontuário": "Consulte o cadastro, o histórico de diagnósticos e os laudos do paciente.",
+    "Recepção Virtual": "Organize a fila de espera e os agendamentos do dia.",
+}
+mostrar_cabecalho(pagina, descricoes[pagina])
 
 
 @st.cache_resource
@@ -47,7 +55,6 @@ if pagina == 'Recepção Virtual':
     mostrar_recepcao(cadastros, colecao.database.agendamentos)
     st.stop()
 
-st.header("Prontuário")
 paciente_id = st.selectbox(
     "Paciente",
     options=list(cadastros),
@@ -58,23 +65,34 @@ paciente_id = st.selectbox(
 
 if paciente_id:
     paciente = cadastros[paciente_id]
-    st.subheader(paciente.get("nome", paciente_id))
-    st.text(f"Nascimento: {paciente.get('data_nascimento') or 'Não informado'}")
-    st.text(f"Telefone: {paciente.get('telefone') or 'Não informado'}")
-    st.text(f"Especialidade: {paciente.get('especialidade_escolhida') or 'Não informada'}")
-    endereco = paciente.get("endereco") or {}
-    if isinstance(endereco, dict):
-        endereco = ", ".join(
-            str(endereco[campo])
-            for campo in ("logradouro", "numero", "bairro", "cidade", "uf")
-            if endereco.get(campo)
-        )
-    st.text(f"Endereço: {endereco or 'Não informado'}")
+    with st.container(border=True):
+        st.caption(paciente_id)
+        st.subheader(paciente.get("nome", paciente_id))
+        nascimento, contato, especialidade = st.columns(3)
+        with nascimento:
+            st.caption("Nascimento")
+            st.text(paciente.get("data_nascimento") or "Não informado")
+        with contato:
+            st.caption("Telefone")
+            st.text(paciente.get("telefone") or "Não informado")
+        with especialidade:
+            st.caption("Especialidade")
+            st.text(paciente.get("especialidade_escolhida") or "Não informada")
+
+        endereco = paciente.get("endereco") or {}
+        if isinstance(endereco, dict):
+            endereco = ", ".join(
+                str(endereco[campo])
+                for campo in ("logradouro", "numero", "bairro", "cidade", "uf")
+                if endereco.get(campo)
+            )
+        st.caption("Endereço")
+        st.write(endereco or "Não informado")
 
     st.subheader("Diagnósticos")
     with st.form(f"diagnostico_{paciente_id}", clear_on_submit=True):
         descricao = st.text_input("Diagnóstico fictício", max_chars=200)
-        salvar = st.form_submit_button("Registrar diagnóstico")
+        salvar = st.form_submit_button("Registrar diagnóstico", type="primary")
 
     try:
         if salvar:

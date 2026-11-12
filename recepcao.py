@@ -60,7 +60,6 @@ def conectar_redis(url):
 
 
 def mostrar_recepcao(cadastros, agendamentos):
-    st.header("Recepção Virtual")
     url = os.getenv("REDIS_URL")
     if not url:
         st.info("Preencha REDIS_URL no arquivo .env do projeto.")
@@ -73,9 +72,10 @@ def mostrar_recepcao(cadastros, agendamentos):
         index=None,
         placeholder="Selecione um paciente",
     )
-    adicionar = st.button("Adicionar à fila", disabled=paciente_id is None)
-    iniciar = st.button("Iniciar próximo atendimento")
-    st.button("Atualizar fila")
+    entrada, atendimento, atualizar = st.columns(3)
+    adicionar = entrada.button("Adicionar à fila", disabled=paciente_id is None)
+    iniciar = atendimento.button("Iniciar próximo atendimento", type="primary")
+    atualizar.button("Atualizar fila")
 
     try:
         redis = conectar_redis(url)
@@ -107,7 +107,14 @@ def mostrar_recepcao(cadastros, agendamentos):
         st.error("Não foi possível acessar a fila. Confira a REDIS_URL e a conexão.")
         return
 
-    mostrar_agenda(redis, agendamentos, cadastros, paciente_id)
+    fila_painel, agenda_painel = st.columns(2)
+    with agenda_painel.container(border=True):
+        mostrar_agenda(redis, agendamentos, cadastros, paciente_id)
+    with fila_painel.container(border=True):
+        mostrar_fila(fila, cadastros)
+
+
+def mostrar_fila(fila, cadastros):
 
     st.subheader("Fila de espera")
     if not fila:
